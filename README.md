@@ -1,8 +1,9 @@
-DrisaForm AI Chatbot
+# DrisaForm AI Chatbot
 Author: Drisa Infotech
 Last Updated: September 25, 2025
 Location: FCT, Nigeria
-1. Overview
+
+# 1. Overview
 DrisaForm is an intelligent, multilingual AI chatbot designed to function as an on-site Agriculture Support Expert for the FarmDepot.ng marketplace. Powered by Nigeria's cutting-edge N-ATLAS language model, DrisaForm is engineered to understand and communicate fluently in English, Hausa, Igbo, and Yoruba.
 The primary goal of this project is to enhance user experience and accessibility by allowing farmers and buyers to interact with the website using natural language. DrisaForm can understand user intent, answer questions, and perform actions on the website, such as navigating to pages, searching for products, and assisting with form submissions for registration and product posting.
 This project consists of two main components:
@@ -110,3 +111,4 @@ The nlp_service.py file currently contains mock logic to simulate the behavior o
  * Adjust the response parsing based on the actual JSON structure returned by the N-ATLAS API.
 9. License
 This project is licensed under the GPLv2 or later. See the drisaform-chatbot-plugin.php file for details.
+
