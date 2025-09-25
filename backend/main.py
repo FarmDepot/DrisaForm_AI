@@ -1,17 +1,29 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-# The "from typing import str" line has been removed.
+from contextlib import asynccontextmanager
 
+# Import your services
 from services import nlp_service, farmdepot_actions
+from services.knowledge_service import knowledge_service # Import the new service instance
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # This code runs on startup
+    print("Application startup...")
+    knowledge_service.load() # Load the knowledge base into memory
+    yield
+    # This code runs on shutdown (optional)
+    print("Application shutdown...")
 
-# Allow requests from your website's domain
+app = FastAPI(lifespan=lifespan)
+
+# ... (keep your CORS middleware and origins as they are) ...
 origins = [
     "http://localhost",
     "http://127.0.0.1",
-    "https://farmdepot.ng", # Add your actual domain
+    "https://farmdepot.ng",
+    # Add your GitHub Codespaces URL here for testing
 ]
 
 app.add_middleware(
@@ -22,9 +34,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class ChatRequest(BaseModel):
     message: str
-    language: str # This uses the built-in str, which is correct.
+    language: str
 
 @app.get("/")
 def read_root():
@@ -35,10 +48,12 @@ def chat_with_drisa(request: ChatRequest):
     """
     Main endpoint to handle chat requests.
     """
-    # 1. Get intent from N-ATLAS
-    intent_data = nlp_service.get_intent_from_natlas(request.message, request.language)
+    # 1. Get intent from N-ATLAS (this function is now smarter)
+    response_data = nlp_service.get_intent_from_natlas(request.message, request.language)
     
-    # 2. Determine action based on intent
-    response_data = farmdepot_actions.execute_action(intent_data)
-    
+    # 2. If it's a direct action, execute it. Otherwise, the response
+    # will already contain the AI-generated answer.
+    if "action" in response_data:
+        return farmdepot_actions.execute_action(response_data)
+        
     return response_data
