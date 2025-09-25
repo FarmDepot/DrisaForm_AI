@@ -23,7 +23,8 @@ app = FastAPI(lifespan=lifespan)
 # and adding the CORS middleware to the FastAPI app.
 origins = [
     "https://farmdepot.ng",
-    "https://www.farmdepot.ng", # To cover the 'www' subdomain
+    "https://www.farmdepot.ng",
+     "https://drisaform-ai.onrender.com" # To cover the 'www' subdomain
 ]
 
 app.add_middleware(
