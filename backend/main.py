@@ -20,8 +20,6 @@ app = FastAPI(lifespan=lifespan)
 
 # ... (keep your CORS middleware and origins as they are) ...
 origins = [
-    "http://localhost",
-    "http://127.0.0.1",
     "https://farmdepot.ng",
     "https://drisaform-ai.onrender.com",
     # Add your GitHub Codespaces URL here for testing
@@ -58,3 +56,11 @@ def chat_with_drisa(request: ChatRequest):
         return farmdepot_actions.execute_action(response_data)
         
     return response_data
+
+import os
+
+if __name__ == "__main__":
+    import uvicorn
+    # Render provides the port to use in the PORT environment variable
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
