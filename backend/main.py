@@ -46,10 +46,10 @@ def read_root():
 @app.post("/chat")
 def chat_with_drisa(request: ChatRequest):
     response_data = nlp_service.get_intent_from_natlas(request.message, request.language)
-    
+
     if "action" in response_data:
         return farmdepot_actions.execute_action(response_data)
-        
+
     return response_data
 
 # This block is for running with 'python main.py'
