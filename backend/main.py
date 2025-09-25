@@ -23,6 +23,7 @@ origins = [
     "http://localhost",
     "http://127.0.0.1",
     "https://farmdepot.ng",
+    "https://drisaform-ai.onrender.com",
     # Add your GitHub Codespaces URL here for testing
 ]
 
