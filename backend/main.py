@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import str
+# The "from typing import str" line has been removed.
 
 from services import nlp_service, farmdepot_actions
 
@@ -11,7 +11,7 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://127.0.0.1",
-    "https://your-farmdepot-domain.ng", # Add your actual domain
+    "https://farmdepot.ng", # Add your actual domain
 ]
 
 app.add_middleware(
@@ -24,7 +24,7 @@ app.add_middleware(
 
 class ChatRequest(BaseModel):
     message: str
-    language: str # e.g., 'en', 'ha', 'ig', 'yo'
+    language: str # This uses the built-in str, which is correct.
 
 @app.get("/")
 def read_root():
