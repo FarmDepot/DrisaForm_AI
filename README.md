@@ -1,6 +1,8 @@
 # DrisaForm AI Chatbot
 Author: Drisa Infotech
+
 Last Updated: September 25, 2025
+
 Location: FCT, Nigeria
 
 # 1. Overview
@@ -111,4 +113,5 @@ The nlp_service.py file currently contains mock logic to simulate the behavior o
  * Adjust the response parsing based on the actual JSON structure returned by the N-ATLAS API.
 9. License
 This project is licensed under the GPLv2 or later. See the drisaform-chatbot-plugin.php file for details.
+
 
