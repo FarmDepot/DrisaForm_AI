@@ -1,0 +1,10 @@
+{
+  "headerTitle": "FarmDepot Support",
+  "inputPlaceholder": "Ask me anything...",
+  "initialBotMessage": "Hello! I am DrisaForm, your farm support agent. How can I help you today?",
+  "voiceButtonLabel": "Use Voice",
+  "voiceStatusIdle": "Status: Idle",
+  "voiceStatusListening": "Listening...",
+  "voiceCommandUnrecognized": "I'm sorry, I didn't recognize that command.",
+  "connectionError": "Sorry, I seem to be having connection issues. Please try again later."
+}

@@ -1,0 +1,10 @@
+{
+  "headerTitle": "Atilẹyin FarmDepot",
+  "inputPlaceholder": "Béèrè ohunkóhun...",
+  "initialBotMessage": "Pẹlẹ o! Èmi ni DrisaForm, aṣojú àtìlẹ́yìn oko rẹ. Báwo ni mo ṣe lè ràn ọ́ lọ́wọ́ lónìí?",
+  "voiceButtonLabel": "Lo Ohùn",
+  "voiceStatusIdle": "Ipò: Múrasílẹ̀",
+  "voiceStatusListening": "Mo n gbọ́...",
+  "voiceCommandUnrecognized": "Má bínú, mi ò mọ àṣẹ yẹn.",
+  "connectionError": "Má bínú, ó dàbí pé mo ní ìṣòro ìsopọ̀. Jọ̀wọ́ gbìyànjú lẹ́ẹ̀kan síi nígbà tó yá."
+}

@@ -1,0 +1,10 @@
+{
+  "headerTitle": "Nkwado FarmDepot",
+  "inputPlaceholder": "Jụọ m ajụjụ ọ bụla...",
+  "initialBotMessage": "Ndewo! Abụ m DrisaForm, onye na-ahụ maka nkwado ugbo gị. Kedu ka m ga-esi nyere gị aka taa?",
+  "voiceButtonLabel": "Jiri Olu",
+  "voiceStatusIdle": "Ọnọdụ: Njikere",
+  "voiceStatusListening": "Ana m ege ntị...",
+  "voiceCommandUnrecognized": "Ndo, amaghị m iwu ahụ.",
+  "connectionError": "Ndo, o yiri ka m nwere nsogbu njikọ. Biko nwaa ọzọ ma emechaa."
+}

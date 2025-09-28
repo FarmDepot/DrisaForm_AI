@@ -1,0 +1,10 @@
+{
+  "headerTitle": "Taimakon FarmDepot",
+  "inputPlaceholder": "Ka tambaye ni komai...",
+  "initialBotMessage": "Sannu! Ni ne DrisaForm, wakilin tallafin gonar ka. Ta yaya zan iya taimaka maka a yau?",
+  "voiceButtonLabel": "Yi Magana",
+  "voiceStatusIdle": "Yanayi: A shirye",
+  "voiceStatusListening": "Ina saurare...",
+  "voiceCommandUnrecognized": "Yi haƙuri, ban gane wannan umarnin ba.",
+  "connectionError": "Yi haƙuri, da alama ina fuskantar matsalolin haɗi. Da fatan za a sake gwadawa anjima."
+}
