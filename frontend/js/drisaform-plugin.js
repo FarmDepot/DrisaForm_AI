@@ -1,6 +1,6 @@
 (function() {
     // --- Configuration ---
-    const BACKEND_URL = "https://humble-meme-v67gg4q4q9gg36xqg-8000.app.github.dev/chat";
+    const BACKEND_URL = "https://drisaform-ai.onrender.com/chat";
 
     // --- 1. CSS Styles (Updated) ---
     const styles = `
