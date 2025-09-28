@@ -18,8 +18,12 @@ app = FastAPI(lifespan=lifespan)
 
 origins = [
     "https://farmdepot.ng",
+    "http://farmdepot.ng",
     "https://www.farmdepot.ng",
-     "https://drisaform-ai.onrender.com"
+    "http://www.farmdepot.ng",
+    "https://drisaform-ai.onrender.com",
+    "http://drisaform-ai.onrender.com",
+    # Add any other domains or subdomains where the frontend is served
 ]
 
 app.add_middleware(
