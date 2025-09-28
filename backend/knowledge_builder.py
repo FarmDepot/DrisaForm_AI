@@ -1,10 +1,8 @@
 import requests
-import time # <-- Import the time library for delays
+import time 
 from bs4 import BeautifulSoup
-
-# --- UPDATED IMPORTS for new LangChain version ---
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_huggingface import HuggingFaceEmbeddings # <-- Import from the new package
+from langchain_huggingface import HuggingFaceEmbeddings 
 from langchain_community.vectorstores import FAISS
 
 # --- 1. Scrape Text Content from FarmDepot.ng (with improvements) ---
@@ -36,7 +34,7 @@ def scrape_website(urls):
         
         # --- ADDED: A delay to be polite to the server ---
         print("Waiting for 2 seconds before next request...")
-        time.sleep(2) # Wait for 2 seconds
+        time.sleep(2) 
 
     return all_text
 
@@ -48,7 +46,6 @@ def build_and_save_vector_store(text_content, index_path="faiss_index"):
     print(f"Split content into {len(docs)} chunks.")
 
     print("Loading embedding model...")
-    # This now uses the updated HuggingFaceEmbeddings class
     embeddings = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 
     print("Creating FAISS vector store...")

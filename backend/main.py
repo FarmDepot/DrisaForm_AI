@@ -4,8 +4,6 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from contextlib import asynccontextmanager
-
-# Import your services
 from services import nlp_service, farmdepot_actions
 from services.knowledge_service import knowledge_service
 
@@ -18,13 +16,10 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 
-# --- THE FIX IS HERE ---
-# We are defining the list of allowed websites (origins)
-# and adding the CORS middleware to the FastAPI app.
 origins = [
     "https://farmdepot.ng",
     "https://www.farmdepot.ng",
-     "https://drisaform-ai.onrender.com" # To cover the 'www' subdomain
+     "https://drisaform-ai.onrender.com"
 ]
 
 app.add_middleware(

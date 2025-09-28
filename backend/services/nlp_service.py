@@ -2,7 +2,6 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
-# Import the knowledge service instance
 from .knowledge_service import knowledge_service
 
 load_dotenv()
@@ -72,11 +71,9 @@ def get_intent_from_natlas(user_message: str, language: str):
 
         # --- Stage 2: Act based on Intent ---
         if intent in ["navigate_to_register", "navigate_to_sell", "search_product"]:
-             # For simple actions, we pass them to the action executor
              return {"intent": intent, "entities": {}}
         
         elif intent == "general_inquiry":
-            # This is where RAG happens!
             print("General inquiry detected. Searching knowledge base...")
             context = knowledge_service.get_relevant_context(user_message)
             

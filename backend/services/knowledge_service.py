@@ -17,7 +17,7 @@ class KnowledgeService:
         self.vector_store = FAISS.load_local(
             self.index_path, 
             self.embeddings, 
-            allow_dangerous_deserialization=True # <-- THE FIX IS HERE
+            allow_dangerous_deserialization=True
         )
         print("Knowledge Service: Loading complete.")
 
