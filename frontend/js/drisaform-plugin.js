@@ -1,6 +1,7 @@
 (function() {
     // --- Configuration ---
-    const BACKEND_URL = "https://drisaform-ai.onrender.com/chat";
+    // Use backendUrl from drisaform_params if available, fallback to default
+    const BACKEND_URL = (window.drisaform_params && window.drisaform_params.backendUrl) ? window.drisaform_params.backendUrl : "https://drisaform-ai.onrender.com/chat";
 
     // --- 1. CSS Styles (Updated) ---
     const styles = `
@@ -255,12 +256,9 @@
 
             try {
                 const response = await fetch(BACKEND_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        message: messageText,
-                        language: currentLang // DYNAMICALLY SET LANGUAGE
-                    }),
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ message: messageText, language: currentLang })
                 });
 
                 if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);

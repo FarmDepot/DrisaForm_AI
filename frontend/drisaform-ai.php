@@ -43,7 +43,8 @@ function drisaform_enqueue_scripts() {
         'drisaform-plugin-script', // The handle of the script to attach data to.
         'drisaform_params',        // The name of the JavaScript object that will contain our data.
         array(
-            'languageFiles' => $language_files // The data itself.
+            'languageFiles' => $language_files, // The data itself.
+            'backendUrl' => 'https://drisaform-ai.onrender.com/chat' // Add this line
         )
     );
 }
